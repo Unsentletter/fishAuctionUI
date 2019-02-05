@@ -9,7 +9,7 @@ class UserProfile extends Component {
       username: 'testing'
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     const token = localStorage.getItem('token');
     axios.get('http://localhost:5000/users/me', {headers: {token}})
       .then((user) => {
