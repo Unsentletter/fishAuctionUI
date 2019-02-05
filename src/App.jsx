@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 import NewUser from './Components/NewUser';
 import UserProfile from './Components/UserProfile';
-import Login from './Components/Login'
+import Login from './Components/Login';
+import ItemsForSale from './Components/ItemList'
 
 const auth = {
   isAuthenticated() {
@@ -46,6 +47,7 @@ class App extends Component {
             <Route exact path='/login' component={Login}/>
             <Route exact path='/create_user' component={NewUser}/>
             <PrivateRoute path='/user_profile' component={UserProfile}/>
+            <PrivateRoute path='items_for_sale' component={ItemsForSale}/>
             <Redirect path='/logout' to='/login' innerRef={auth.logout}/>
           </div>
         </BrowserRouter>
